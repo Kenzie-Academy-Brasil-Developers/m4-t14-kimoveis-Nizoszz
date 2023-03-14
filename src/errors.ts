@@ -10,19 +10,19 @@ class AppError extends Error {
 }
 
 const handleErrors = (
-  err: any,
+  Error: any,
   req: Request,
   res: Response,
   _: NextFunction
 ) => {
-  if (err instanceof AppError) {
-    return res.status(err.statusCode).json({
-      message: err.message,
+  if (Error instanceof AppError) {
+    return res.status(Error.statusCode).json({
+      message: Error.message,
     });
   }
 
-  if (err instanceof ZodError) {
-    return res.status(400).json({ message: err.flatten().fieldErrors });
+  if (Error instanceof ZodError) {
+    return res.status(400).json({ message: Error.flatten().fieldErrors });
   }
 
   return res.status(500).json({
