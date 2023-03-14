@@ -5,7 +5,7 @@ import { userRoutes } from "./routers/users.routes";
 import { loginRoutes } from "./routers/login.routes";
 import { categoriesRoutes } from "./routers/categories.routes";
 import { realEstateRoutes } from "./routers/real_estate.routes";
-import { schedulesRoutes } from "./routers/schedules_users_properties.services.routes";
+import { schedulesRoutes } from "./routers/schedules_users_properties.routes";
 
 const app: Application = express();
 app.use(express.json());

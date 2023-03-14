@@ -28,8 +28,10 @@ const create = async (data: iSchedules, userdId: number): Promise<object> => {
   if (data.hour < "08:00" || data.hour > "18:00") {
     throw new AppError("Invalid hour, available times are 8AM to 18PM");
   }
+
   const newDate = new Date(data.date);
   const weekDay = newDate.getDay();
+  
   if (weekDay === 0 || weekDay === 6) {
     throw new AppError("Invalid date, work days are monday to friday", 400);
   }
