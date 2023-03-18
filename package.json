@@ -2,7 +2,9 @@
   "scripts": {
     "test": "jest --verbose --runInBand",
     "dev": "ts-node-dev --cls --rs --ignore-watch node_modules src/server.ts",
-    "typeorm": "typeorm-ts-node-commonjs"
+    "typeorm": "typeorm-ts-node-commonjs",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
